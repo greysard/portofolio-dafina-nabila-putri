@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Data Analyst & Data Scientist Dafina Nabila Putri. Spesialisasi dalam Python, SQL, Tableau, dan Machine Learning.">
+    <meta name="author" content="Dafina Nabila Putri">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Dafina Nabila Putri - Data Analyst Portfolio">
+    <meta property="og:description" content="Portofolio profesional Data Analyst & Data Scientist. Lihat proyek analisis data, visualisasi, dan keahlian teknis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dafinanabila.github.io/">
+    <meta property="og:image" content="assets/images/profile.jpg">
+
+    <title>Dafina Nabila Putri | Data Analyst & Scientist</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary-navy: #0B3D91;
+            --accent-cyan: #00C4FF;
+            --bg-light: #F5F5F5;
+            --bg-white: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-gray: #4B5563;
+            --text-light: #E5E7EB;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-cyan);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: var(--font-heading);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-cyan);
+            color: var(--primary-navy);
+        }
+
+        .btn-primary:hover {
+            background-color: #00a0d1;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(0, 196, 255, 0.1);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--accent-cyan);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* --- ABOUT SECTION --- */
+        #about {
+            padding: 5rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .about-highlights {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            border-left: 3px solid var(--accent-cyan);
+            padding-left: 1rem;
+        }
+
+        .highlight-item h4 {
+            color: var(--primary-navy);
+            font-family: var(--font-heading);
+            margin-bottom: 0.25rem;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 20px 20px 0 var(--text-gray);
+            background-color: #ddd; /* Fallback placeholder color */
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        /* --- SKILLS SECTION --- */
+        #skills {
+            padding: 5rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-card);
+            border-top: 4px solid var(--primary-navy);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent-cyan);
+        }
+
+        .skill-card h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: #eef2ff;
+            color: var(--primary-navy);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* --- PROJECTS SECTION --- */
+        #projects {
+            padding: 5rem 0;
+            background-color: var(--bg-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: #cbd5e1; /* Placeholder grey */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .project-meta {
+            font-size: 0.85rem;
+            color: #6B7280;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-desc strong {
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border: 1px solid var(--primary-navy);
+            border-radius: 4px;
+            color: var(--primary-navy);
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            text-align: center;
+            background-color: var(--primary-navy);
+            color: white;
+            border-radius: 4px;
+        }
+        
+        .btn-small:hover {
+            background-color: #0d4ab0;
+        }
+
+        /* --- EXPERIENCE & EDUCATION --- */
+        #experience {
+            padding: 5rem 0;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #d1d5db;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 50px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--bg-light);
+            border: 3px solid var(--accent-cyan);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-header h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-navy);
+            font-size: 1.2rem;
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        .exp-date {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .exp-desc {
+            color: var(--text-gray);
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        #contact {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 5rem 0 2rem;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-container p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #e0e7ff;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-navy);
+            border-color: var(--accent-cyan);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simple hiding for non-JS implementation. */
+                /* Ideally, simple vertical layout for mobile */
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+
+            .about-image img {
+                width: 200px;
+            }
+
+            .timeline::after {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 40px;
+            }
+        }
+    </style>
+
+    <!-- Structured Data JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dafina Nabila Putri",
+      "jobTitle": "Data Analyst | Data Scientist",
+      "url": "https://dafinanabila.github.io",
+      "alumniOf": "Universitas Bina Sarana Informatika",
+      "knowsAbout": ["Python", "SQL", "Data Analytics", "Machine Learning", "Tableau", "Power BI"],
+      "sameAs": [
+        "https://www.linkedin.com/in/dafina-nabila-putri",
+        "http://public.tableau.com/app/profile/dafinanabilaputri/vizzes"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Dafina<span> Portofolio</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Dafina Nabila Putri</h1>
+            <h2>Data Analyst | Data Scientist</h2>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
+                <a href="#about" class="btn btn-outline">Tentang Saya</a>
+            </div>
+            <style>
+                .btn-primary {
+                    background-color: #1e90ff;
+                    color: #ffffff;
+                }
+
+                .btn-outline {
+                    background-color: transparent;
+                    color: #ffffff;
+                    border: 2px solid #ffffff;
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Saya adalah mahasiswa semester 5 Program Studi Sistem Informasi di Universitas Bina Sarana Informatika dengan ketertarikan mendalam pada bidang analisis data. Saya berpengalaman mengikuti Studi Independen dengan fokus Data Analytics dan Business Intelligence, serta aktif mengikuti pelatihan dan kompetisi terkait data.
+                    </p>
+                    <p>
+                        Terampil dalam pengolahan data, proses ETL, pembuatan query SQL, dan visualisasi data menggunakan Tableau dan Power BI. Saya mampu bekerja secara tim maupun individu serta memiliki kemampuan organisasi yang baik.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <h4>Analytics</h4>
+                            <p>Data-driven decision making</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Insight</h4>
+                            <p>Business optimization</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Predictive</h4>
+                            <p>Machine Learning models</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder image for profile -->
+                <div class="about-image">
+                    <!-- Gunakan 'alt' yang deskriptif untuk SEO dan aksesibilitas -->
+                    <img src="assets/images/profile.jpg" alt="Foto Profil Dafina Nabila Putri" onerror="this.src='https://ui-avatars.com/api/?name=Dafina+Nabila&background=0B3D91&color=fff&size=400'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <!-- Category 1 -->
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL (Advanced)</span>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="skill-card">
+                    <h3>Data & Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Numpy</span>
+                        <span class="skill-tag">Excel (Pivot)</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">ETL</span>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="skill-card">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Regression</span>
+                        <span class="skill-tag">Classification</span>
+                        <span class="skill-tag">Clustering</span>
+                        <span class="skill-tag">EDA</span>
+                    </div>
+                </div>
+                <!-- Category 4 -->
+                <div class="skill-card">
+                    <h3>Visualization</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Portfolio Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project-sleep.png" alt="Visualisasi Sleep Health" onerror="this.parentNode.innerHTML='<div style=\'padding:20px; text-align:center\'>Image: assets/images/project-sleep.png</div>'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Analysis Of The Relationship Between Sleep Health And Lifestyle</h3>
+                        <div class="project-meta">Kaggle Dataset | Python Analysis</div>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Seaborn</span>
+                        </div>
+                        <div class="project-desc">
+                            <p><strong>Problem:</strong> Tidur buruk berdampak negatif pada produktivitas. Semakin tinggi tingkat stres, semakin pendek durasi tidur.</p>
+                            <p><strong>Insight:</strong> Ditemukan korelasi negatif kuat antara stres dengan durasi tidur. Intervensi yang direkomendasikan berhasil meningkatkan rata-rata durasi tidur sebesar 12% pada studi simulasi.</p>
+                        </div>
+                        <a href="https://drive.google.com/drive/folders/1sViyzYZGiDm7uEsgi41ntyPhtdXdNlFf?usp=sharing" class="btn-small">Lihat Detail</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project-dvd.png" alt="Visualisasi DVD Rental" onerror="this.parentNode.innerHTML='<div style=\'padding:20px; text-align:center\'>Image: assets/images/project-dvd.png</div>'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">DVD Rental Customer Behavior and Business Insights</h3>
+                        <div class="project-meta">SQL & PostgreSQL | Business Intelligence</div>
+                        <div class="tech-stack">
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Matplotlib</span>
+                        </div>
+                        <div class="project-desc">
+                            <p><strong>Problem:</strong> Fluktuasi pendapatan akibat perilaku pelanggan yang tidak konsisten.</p>
+                            <p><strong>Insight:</strong> Genre 'Action' & 'Sports' memberikan kontribusi tertinggi. Pelanggan "Long-term" adalah yang paling menguntungkan. Rekomendasi optimasi stok berpotensi meningkatkan pendapatan 15%.</p>
+                        </div>
+                        <a href="https://public.tableau.com/app/profile/nawal.aulia/viz/Amountperformance2/AmountPerformance" class="btn-small">Lihat Dashboard</a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project-tableau.png" alt="Dashboard Tableau" onerror="this.parentNode.innerHTML='<div style=\'padding:20px; text-align:center\'>Image: assets/images/project-tableau.png</div>'">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Complaint Analysis Using Tableau</h3>
+                        <div class="project-meta">Tableau Dashboard | Interactive Visualization</div>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Tableau</span>
+                            <span class="tech-badge">Data Viz</span>
+                            <span class="tech-badge">Analytics</span>
+                        </div>
+                        <div class="project-desc">
+                            <p><strong>Problem:</strong> Banyak keluhan pelanggan, namun data belum dianalisis secara mendalam.</p>
+                            <p><strong>Insight:</strong> Wilayah Texas & California mencatat keluhan tertinggi. Isu utama terkait laporan kredit. Dashboard interaktif dibuat untuk memantau tren keluhan dan efisiensi respons perusahaan.</p>
+                        </div>
+                        <a href="https://public.tableau.com/app/profile/dafinanabilaputri/viz/complaintcustomer/ComplaintCustomer" target="_blank" class="btn-small">Lihat Dashboard</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <h3>Junior Data Scientist (MSIB)</h3>
+                        <span class="exp-date"> September - Desemmber 2025</span>
+                    </div>
+                    <div class="exp-company">PT. VINIX SEVEN AURUM (VINIX 7)</div>
+                    <p class="exp-desc">Bertugas pada pengolahan data, Exploratory Data Analysis (EDA), dan visualisasi data untuk mendukung laporan internal perusahaan.</p>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <h3>Mentee Data Analyst & BI (MSIB)</h3>
+                        <span class="exp-date">September - Desember 2024</span>
+                    </div>
+                    <div class="exp-company">PT. Mitra Talenta Grup (Celerates)</div>
+                    <p class="exp-desc">Melakukan analisis data dan visualisasi untuk dashboard, serta menjalankan query SQL melalui DBeaver untuk ekstraksi dan manipulasi data yang kompleks.</p>
+                </div>
+
+                <!-- Education -->
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <h3>Sistem Informasi</h3>
+                        <span class="exp-date">2023 - Sekarang</span>
+                    </div>
+                    <div class="exp-company">Universitas Bina Sarana Informatika</div>
+                    <p class="exp-desc">Mahasiswa Semester 5. Fokus studi pada Manajemen Data, Analisis Sistem, dan Business Intelligence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <div class="contact-container">
+                <p>Saya terbuka untuk kesempatan kolaborasi, proyek freelance, atau posisi full-time. Mari diskusikan bagaimana data dapat membantu bisnis Anda.</p>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/dafina-nabila-putri" target="_blank" class="contact-btn">LinkedIn</a>
+                    <a href="http://public.tableau.com/app/profile/dafinanabilaputri/vizzes" target="_blank" class="contact-btn">Tableau Profile</a>
+                </div>
+                <div class="contact-text email">
+                    <!-- EMAIL (ATAS) -->
+                    <a href="mailto:dafinanabila122@gmail.com" class="contact-text">
+                        <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4 4h16v16H4z"/>
+                          <path d="M22 6l-10 7L2 6"/>
+                        </svg>
+                        dafinanabila122@gmail.com
+                    </a>
+
+                    <!-- LOKASI (BAWAH) -->
+                    <div class="contact-text location">
+                        <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Bekasi, Indonesia
+                    </div>
+                    <style>
+                       /* Wrapper email + lokasi */
+                        .contact-text.email {
+                            display: flex;
+                            flex-direction: column;   /* MENURUN */
+                            align-items: center;      /* TENGAH */
+                            gap: 12px;
+                            margin-top: 25px;
+                        }
+
+                        /* Item email & lokasi */
+                        .contact-text {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            color: white;
+                            text-align: center;
+                        }
+
+                        /* Link email */
+                        .contact-text a {
+                            color: white;
+                            text-decoration: none;
+                        }
+
+                        /* Icon supaya tidak geser */
+                        .contact-icon {
+                            flex-shrink: 0;
+                        }
+                    </style>
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Dafina Nabila Putri. Dibangun dengan HTML & CSS.</p>
+            </footer>
+        </div>
+    </section>
+
+</body>
+</html>
