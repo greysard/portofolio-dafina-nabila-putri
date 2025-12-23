@@ -406,8 +406,12 @@
         }
 
         /* --- EXPERIENCE & EDUCATION --- */
-        #experience {
+        #experience, #education {
             padding: 5rem 0;
+        }
+
+        #education {
+            background-color: var(--bg-white);
         }
 
         .timeline {
@@ -429,7 +433,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             padding-left: 50px;
         }
 
@@ -451,7 +455,7 @@
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .exp-header h3 {
@@ -460,12 +464,23 @@
             font-size: 1.2rem;
         }
 
+        .exp-role {
+            font-weight: 700;
+            color: #0e2c57;
+            margin-bottom: 0.1rem;
+            display: block;
+        }
+
         .exp-company {
             font-weight: 600;
             color: #4B5563;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .exp-date {
+            white-space: nowrap;
+            flex-shrink: 0;
             color: var(--accent-cyan);
             font-weight: 600;
             font-size: 0.9rem;
@@ -473,6 +488,24 @@
 
         .exp-desc {
             color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: var(--primary-navy);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed var(--primary-navy);
+            transition: var(--transition);
+        }
+
+        .cert-link:hover {
+            color: var(--accent-cyan);
+            border-bottom-color: var(--accent-cyan);
         }
 
         /* --- CONTACT & FOOTER --- */
@@ -501,18 +534,29 @@
             flex-wrap: wrap;
         }
 
-        .contact-btn {
+        .icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
             background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 50px;
+            border-radius: 50%;
             border: 1px solid rgba(255,255,255,0.2);
             transition: var(--transition);
+            fill: white;
         }
 
-        .contact-btn:hover {
+        .icon-btn:hover {
             background: var(--accent-cyan);
-            color: var(--primary-navy);
             border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            fill: var(--primary-navy);
+        }
+
+        .icon-btn svg {
+            width: 24px;
+            height: 24px;
         }
 
         footer {
@@ -594,6 +638,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -609,16 +654,39 @@
                 <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
                 <a href="#about" class="btn btn-outline">Tentang Saya</a>
             </div>
+            
             <style>
+                .hero {
+                    background: linear-gradient(135deg, #021B79 0%, #0575E6 100%);
+                    
+                    /* Padding agar tidak terlalu gepeng */
+                    padding: 150px 0; 
+                    text-align: center;
+                    color: white; /* Pastikan teks tetap putih */
+                }
+
                 .btn-primary {
                     background-color: #1e90ff;
                     color: #ffffff;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    margin: 0 5px;
                 }
 
                 .btn-outline {
                     background-color: transparent;
                     color: #ffffff;
                     border: 2px solid #ffffff;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    margin: 0 5px;
+                }
+                
+                .btn-outline:hover {
+                    background-color: white;
+                    color: #021B79;
                 }
             </style>
         </div>
@@ -711,7 +779,7 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Portfolio Projects</h2>
+            <h2 class="section-title">Portofolio Projects</h2>
             <div class="projects-grid">
                 
                 <!-- Project 1 -->
@@ -731,7 +799,7 @@
                             <p><strong>Problem:</strong> Tidur buruk berdampak negatif pada produktivitas. Semakin tinggi tingkat stres, semakin pendek durasi tidur.</p>
                             <p><strong>Insight:</strong> Ditemukan korelasi negatif kuat antara stres dengan durasi tidur. Intervensi yang direkomendasikan berhasil meningkatkan rata-rata durasi tidur sebesar 12% pada studi simulasi.</p>
                         </div>
-                        <a href="https://drive.google.com/drive/folders/1sViyzYZGiDm7uEsgi41ntyPhtdXdNlFf?usp=sharing" class="btn-small">Lihat Detail</a>
+                        <a href="https://drive.google.com/drive/folders/1sViyzYZGiDm7uEsgi41ntyPhtdXdNlFf?usp=sharing" target="_blank" class="btn-small">Lihat Detail</a>
                     </div>
                 </article>
 
@@ -752,7 +820,7 @@
                             <p><strong>Problem:</strong> Fluktuasi pendapatan akibat perilaku pelanggan yang tidak konsisten.</p>
                             <p><strong>Insight:</strong> Genre 'Action' & 'Sports' memberikan kontribusi tertinggi. Pelanggan "Long-term" adalah yang paling menguntungkan. Rekomendasi optimasi stok berpotensi meningkatkan pendapatan 15%.</p>
                         </div>
-                        <a href="https://public.tableau.com/app/profile/nawal.aulia/viz/Amountperformance2/AmountPerformance" class="btn-small">Lihat Dashboard</a>
+                        <a href="https://public.tableau.com/app/profile/nawal.aulia/viz/Amountperformance2/AmountPerformance" target="_blank" class="btn-small">Lihat Dashboard</a>
                     </div>
                 </article>
 
@@ -781,40 +849,181 @@
         </div>
     </section>
 
-    <!-- Experience & Education Section -->
+    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">Experience & Education</h2>
-            
+            <h2 class="section-title">Experience</h2>
             <div class="timeline">
                 <!-- Experience 1 -->
-                <div class="timeline-item">
+                <div class="timeline-item experience">
                     <div class="exp-header">
-                        <h3>Junior Data Scientist (MSIB)</h3>
-                        <span class="exp-date"> September - Desemmber 2025</span>
+                        <h3>Magang dan Studi Independen Bersertifikat Mandiri</h3>
+                        <span class="exp-date">September - Desember 2025</span>
                     </div>
-                    <div class="exp-company">PT. VINIX SEVEN AURUM (VINIX 7)</div>
-                    <p class="exp-desc">Bertugas pada pengolahan data, Exploratory Data Analysis (EDA), dan visualisasi data untuk mendukung laporan internal perusahaan.</p>
+                    <span class="exp-role">Junior Data Scientist (Pengolahan Data)</span>
+                    <span class="exp-company">PT. Vinix Seven Aurum (VINIX7)</span>
+                    <p class="exp-desc" style="max-width: 75%;">Bertugas pada pengolahan data, Exploratory Data Analysis (EDA), dan visualisasi data untuk mendukung laporan internal perusahaan.</p>
+                    <img src="assets/images/sertif-vinix.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-vinix.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
                 </div>
 
                 <!-- Experience 2 -->
-                <div class="timeline-item">
+                <div class="timeline-item experience">
                     <div class="exp-header">
-                        <h3>Mentee Data Analyst & BI (MSIB)</h3>
-                        <span class="exp-date">September - Desember 2024</span>
+                        <h3>Mini Bootcamp Data Analyst</h3>
+                        <span class="exp-date">Juli - Agustus 2025</span>
                     </div>
-                    <div class="exp-company">PT. Mitra Talenta Grup (Celerates)</div>
-                    <p class="exp-desc">Melakukan analisis data dan visualisasi untuk dashboard, serta menjalankan query SQL melalui DBeaver untuk ekstraksi dan manipulasi data yang kompleks.</p>
+                    <span class="exp-role">Training Participant</span>
+                    <span class="exp-company">DQLab</span>
+                    <p class="exp-desc" style="max-width: 75%;">Memperkenalkan Data Analyst dari level basic hingga intermediate serta mengerjakan study case untuk manipulasi, mengolah, dan visualisai.</p>
+                    <img src="assets/images/sertif-dqlab.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-dqlab.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
                 </div>
 
-                <!-- Education -->
+                <!-- Experience 3 -->
+                <div class="timeline-item experience">
+                    <div class="exp-header">
+                        <h3>Fundamental Data Analyst</h3>
+                        <span class="exp-date">Juni 2025</span>
+                    </div>
+                    <span class="exp-role">Training Participant</span>
+                    <span class="exp-company">KOMDIGI</span>
+                    <p class="exp-desc" style="max-width: 75%;">Melakukan data scrapping dan cleaning menggunakan Python untuk memastikan kualitas data. Serta menggunakan data annotation untuk menyiapkan dataset pada model Machine Learning.</p>
+                    <img src="assets/images/sertif-da.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-da.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
+                </div>
+
+                <!-- Experience 4 -->
+                 <div class="timeline-item experience">
+                    <div class="exp-header">
+                        <h3>Mini Course Belajar Bekerja Bootcamp</h3>
+                        <span class="exp-date">Juli 2025</span>
+                    </div>
+                    <span class="exp-role">Training Participant</span>
+                    <span class="exp-company">Luar Sekolah</span>
+                    <p class="exp-desc" style="max-width: 75%;">Mengolah dataset menggunakan Microsoft Excel untuk menganalisis serta membuat visualisasi untuk menemukan pola, tren, dan insight dari data.</p>
+                    <img src="assets/images/sertif-luarsekolah.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-luarsekolah.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
+                </div>
+
+                <!-- Experience 5 -->
+                <div class="timeline-item experience">
+                    <div class="exp-header">
+                        <h3>Fundamental Data Science</h3>
+                        <span class="exp-date">Juni 2025</span>
+                    </div>
+                    <span class="exp-role">Training Participant</span>
+                    <span class="exp-company">KOMDIGI</span>
+                    <p class="exp-desc" style="max-width: 75%;">Melakukan data scrapping dan cleaning menggunakan Python untuk memastikan kualitas data. Serta menggunakan data annotation untuk menyiapkan dataset pada model Machine Learning.</p>
+                    <img src="assets/images/sertif-ds.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-ds.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
+                </div>
+
+                <!-- Experience 6 -->
+                <div class="timeline-item experience">
+                    <div class="exp-header">
+                        <h3>Mini Course Data Analyst</h3>
+                        <span class="exp-date">Maret 2025</span>
+                    </div>
+                    <span class="exp-role">Training Participant</span>
+                    <span class="exp-company">RevoU</span>
+                    <p class="exp-desc" style="max-width: 75%;">Melakukan praktik SQL serta menggunakan Python pada Google Colab untuk olah data, EDA, dan analisis.</p>
+                    <img src="assets/images/sertif-revou.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-revou.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
+                </div>
+
+                <!-- Experience 7 -->
+                <div class="timeline-item experience">
+                    <div class="exp-header">
+                        <h3>MSIB Kampus Merdeka</h3>
+                        <span class="exp-date">Sep 2024 - Des 2024</span>
+                    </div>
+                    <span class="exp-role">Mentee of Data Analyst and Business Intelligence</span>
+                    <span class="exp-company">PT. Mitra Talenta Grup (Celerates)</span>
+                    <p class="exp-desc" style="max-width: 75%;">Bertugas pada analisis data dan visualisasi untuk dashboard, serta menjalankan query SQL melalui DBeaver untuk ekstrak dan manipulasi data.</p>
+                    <img src="assets/images/sertif-cele.jpg" alt="Preview Sertifikat" class="cert-preview-img">
+                    <a href="assets/images/sertif-cele.jpg" class="cert-link">Lihat Sertifikat &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .timeline-item.exeperience {
+            position: relative;
+            padding-right: 140px; 
+            transition: background-color 0.3s ease;
+        }
+
+        .cert-preview-img {
+            position: absolute;
+            top: 50px;    /* Jarak dari atas container */
+            right: 15px;  /* Jarak dari kanan container */
+            width: 170px; /* Lebar preview (kecil saja) */
+            height: auto; /* Tinggi menyesuaikan */
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            opacity: 0;         /* Transparan penuh */
+            visibility: hidden; /* Tidak bisa diklik saat tersembunyi */
+            transform: translateY(10px); /* Sedikit bergeser ke bawah */
+            transition: all 0.3s ease-in-out;
+            z-index: 10; /* Pastikan muncul di atas elemen lain */
+        }
+
+        /* TRIGGER: Saat timeline-item di-hover, ubah style gambar di dalamnya */
+        .timeline-item:hover .cert-preview-img {
+            opacity: 1;          /* Jadi terlihat */
+            visibility: visible; /* Bisa berinteraksi */
+            transform: translateY(0); /* Kembali ke posisi semula (efek naik sedikit) */
+        }
+
+        .timeline-item:hover {
+            background-color: #f9f9f9; /* Warna background sedikit berubah saat hover */
+        }
+    </style>
+
+    <!-- More Experience Section -->
+     <section id="experience">
+        <div class="container">
+            <h2 class="section-title">More Experience</h2>
+            <div class="timeline">
+                <!-- Organization -->
                 <div class="timeline-item">
                     <div class="exp-header">
-                        <h3>Sistem Informasi</h3>
+                        <h3>Himpunan Mahasiswa Sistem Informasi UBSI</h3>
+                        <span class="exp-date">Januari 2023 - Sekarang</span>
+                    </div>
+                    <span class="exp-role">Bendahara</span>
+                    <p class="exp-desc">Mengelola laporan keuangan (pemasukan dan pengeluaran) organisasi.</p>
+                    <span class="exp-role"> Koordinator Divisi Pendidikan</span>
+                    <p class="exp desc"> Memimpin dan mengoordinasikan tim divisi pendidikan serta merancang dan melaksanakan program kerja divisi pendidikan.</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- Education Section -->
+     <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <h3>Universitas Bina Sarana informatika</h3>
                         <span class="exp-date">2023 - Sekarang</span>
                     </div>
-                    <div class="exp-company">Universitas Bina Sarana Informatika</div>
+                    <div class="exp-company">Sistem informasi</div>
                     <p class="exp-desc">Mahasiswa Semester 5. Fokus studi pada Manajemen Data, Analisis Sistem, dan Business Intelligence.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <h3>SMA Negeri 1 Babelan</h3>
+                        <span class="exp-date">2019 - 2021</span>
+                    </div>
+                    <span class="exp-company">Ilmu Pengetahuan Sosial</span>
+                    <p class="exp-desc">Berfokus pada pengethuan sosial seperti sejarah dan geografi</p>
                 </div>
             </div>
         </div>
@@ -828,64 +1037,51 @@
                 <p>Saya terbuka untuk kesempatan kolaborasi, proyek freelance, atau posisi full-time. Mari diskusikan bagaimana data dapat membantu bisnis Anda.</p>
                 
                 <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/dafina-nabila-putri" target="_blank" class="contact-btn">LinkedIn</a>
-                    <a href="http://public.tableau.com/app/profile/dafinanabilaputri/vizzes" target="_blank" class="contact-btn">Tableau Profile</a>
-                </div>
-                <div class="contact-text email">
-                    <!-- EMAIL (ATAS) -->
-                    <a href="mailto:dafinanabila122@gmail.com" class="contact-text">
-                        <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M4 4h16v16H4z"/>
-                          <path d="M22 6l-10 7L2 6"/>
-                        </svg>
-                        dafinanabila122@gmail.com
+                    <!-- Email Icon -->
+                    <a href="mailto:dafinanabila122@gmail.com" class="icon-btn" title="Email Me">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                    
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/dafina-nabila-putri" target="_blank" class="icon-btn" title="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    
+                    <!-- Tableau Icon -->
+                    <a href="http://public.tableau.com/app/profile/dafinanabilaputri/vizzes" target="_blank" class="icon-btn" title="Tableau Profile">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg"
+                        alt="Tableau Logo"
+                        style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
                     </a>
 
-                    <!-- LOKASI (BAWAH) -->
-                    <div class="contact-text location">
-                        <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                        </svg>
-                        Bekasi, Indonesia
-                    </div>
-                    <style>
-                       /* Wrapper email + lokasi */
-                        .contact-text.email {
-                            display: flex;
-                            flex-direction: column;   /* MENURUN */
-                            align-items: center;      /* TENGAH */
-                            gap: 12px;
-                            margin-top: 25px;
-                        }
-
-                        /* Item email & lokasi */
-                        .contact-text {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 10px;
-                            color: white;
-                            text-align: center;
-                        }
-
-                        /* Link email */
-                        .contact-text a {
-                            color: white;
-                            text-decoration: none;
-                        }
-
-                        /* Icon supaya tidak geser */
-                        .contact-icon {
-                            flex-shrink: 0;
-                        }
-                    </style>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/greysard" target="_blank" class="icon-btn" title="GitHub Profile">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+                            alt="GitHub Logo" 
+                            style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                    </a>
                 </div>
+
+                <!-- LOKASI (BAWAH) -->
+                <div class="contact-text location">
+                    <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Bekasi, Indonesia
+                </div>
+                <style>
+                    /* Wrapper lokasi */
+                    .contact-text.location {
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 40px;
+                    }
+                </style>
             </div>
+        </div>
             
             <footer>
                 <p>&copy; 2025 Dafina Nabila Putri. Dibangun dengan HTML & CSS.</p>
